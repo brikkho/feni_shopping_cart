@@ -31,7 +31,7 @@ function updateCart() {
     const cartItemDiv = document.createElement('div');
     cartItemDiv.classList.add('cart-item');
     cartItemDiv.innerHTML = `
-      <span>${item.name} x ${item.quantity}</span>
+      <span>${item.name} x ${item.quantity} =</span>
       <span>BDT ${item.price * item.quantity}</span>
     `;
     cartItemsDiv.appendChild(cartItemDiv);
