@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladeshi Shopping Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background-color: #28a745; color: white; padding: 1rem; text-align: center; }
+    .container { display: flex; flex-wrap: wrap; padding: 1rem; }
+    .product { border: 1px solid #ccc; border-radius: 5px; padding: 1rem; margin: 0.5rem; width: 200px; text-align: center; }
+    .product img { width: 100%; height: 150px; object-fit: cover; }
+    .cart { position: fixed; top: 10px; right: 10px; background-color: #f8f9fa; padding: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    .cart h2 { margin: 0 0 1rem 0; }
+    .cart-items { max-height: 300px; overflow-y: auto; }
+    .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .btn { background-color: #007bff; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 3px; }
+    .btn:disabled { background-color: #ccc; cursor: not-allowed; }
+    .checkout { margin-top: 1rem; }
+    @media (max-width: 600px) {
+      .container { flex-direction: column; align-items: center; }
+      .product { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Feni Shopping Cart</h1>
+  </header>
+
+  <div class="cart">
+    <h2>Cart (<span id="cart-count">0</span>)</h2>
+    <div class="cart-items" id="cart-items"></div>
+    <p>Total: BDT <span id="cart-total">0</span></p>
+    <button class="btn" id="clear-cart">Clear Cart</button>
+    <button class="btn checkout" id="checkout">Checkout</button>
+  </div>
+
+  <div class="container" id="product-list"></div>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="ui.js"></script>
+
+</body>
+</html>
